@@ -1,0 +1,113 @@
+Q1) Create class calculator with two method Add and product. Create object and call method
+
+using System;
+
+public class Calculator
+{
+    public int Addition(int a, int b)
+    {
+        return a + b;
+    }
+
+    public int Multiplication(int a, int b)
+    {
+        return a * b;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        
+        Calculator calculator = new Calculator();
+
+        
+        int sum = calculator.Addition(5, 3);
+        Console.WriteLine("Sum of given numbers is " + sum);
+
+        
+        int product = calculator.Multiplication(5, 3);
+        Console.WriteLine("Product of given numbers " + product);
+    }
+}
+
+Q2) Create class library with method fact() which will return factorial of a number. Use it in console application
+
+---------------Library----------------------------------------------------------------
+namespace facto
+{
+    public class Class1
+    {
+        public static int fact(int x)
+        {
+            if (x >= 1)
+            {
+                return x * fact(x - 1);
+            }
+            else
+            {
+                return 1;
+            }
+        }
+
+    }
+}
+--------------------------------Class--------------------------------------------------------------
+using facto;
+
+    class factorial
+    {
+        public static void Main(String[] args)
+        {
+        int a;
+        a = Convert.ToInt32(Console.ReadLine());
+
+        int r = facto.Class1.fact(a);
+        Console.WriteLine(r);
+
+        }
+    }
+
+
+Q3) Create a class student in namespace DAC and in namespace DBDA write method add in both class. In entry point call both method
+
+using System;
+namespace Dac
+{
+    class student
+    {
+        public void add()
+        {
+            Console.WriteLine("Add of DAC students");
+        }
+    }
+
+}
+namespace Dbda
+{
+    class student
+    {
+        public void add()
+        {
+            Console.WriteLine("Add of dbda students");
+        }
+    }
+}
+
+
+namespace ConsoleApplicationdemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dac.student s1 = new Dac.student();
+            Dbda.student s2 = new Dbda.student();
+            s1.add();
+            s2.add();
+        }
+    }
+}
+
+
