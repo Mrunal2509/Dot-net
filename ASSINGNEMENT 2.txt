@@ -1,0 +1,180 @@
+Q1. Accept two number from user and do the sum of it
+Q2. Accept a float value and print square of that number
+Solve above code using Parse(), ToSingle() and TryPrase() method.
+Also observe exception if you do not enter valid data
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AssignmentDay2Que1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /* ******
+                             * TryParse *
+             * String X, Y;
+             float F, G;
+             Console.WriteLine("Enter Two Number");
+             X = Console.ReadLine();
+             Y = Console.ReadLine();
+             bool a1 = float.TryParse(X, out F);
+             bool a2 = float.TryParse(Y, out G);
+             if (a1 == true && a2 == true) 
+             {
+                 Console.WriteLine(F + G);
+             }
+            *******/
+
+            //parse//
+            /*  Console.WriteLine("Enter Two Number");
+              String S1 = Console.ReadLine();
+              String S2 = Console.ReadLine();
+              int a1 = int.Parse(S1);
+              int a2 = int.Parse(S2);
+
+              Console.WriteLine(a1 + a2);
+            */
+
+
+
+            //To Single//
+
+            String S1 = Console.ReadLine();
+            String S2 = Console.ReadLine();
+            int a1 = (int)Convert.ToSingle(S1);
+            int a2 =(int) Convert.ToSingle(S2);
+            Console.WriteLine(a1 + a2);
+
+
+
+
+        }
+    }
+}
+Create a class calculator and write 3 instance method square, cube, round[if in put 22.5 o/p 22]
+Which will return square .cube and rounded number.
+Create object and call method and print the result.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AssignmentDay2Que1
+{
+    internal class Calculator
+    {
+        public void Square(int x) 
+        {
+            float c = x * x;
+            Console.WriteLine("The Square of the number is"+c);
+        }
+
+        public void Cube(int x)
+        {
+            float res = x * x * x;
+            Console.WriteLine("The Cube of the number is " + res);
+        }
+        public void Roundooff(float x)
+        {
+            int y = (int)Math.Round(x);
+            Console.WriteLine("The Round off the number is"+y);
+            
+        }
+
+    }
+}
+
+            Calculator c1 = new Calculator();
+            Console.WriteLine("Enter a number for Square");
+            int a = Convert.ToInt32(Console.ReadLine());
+            c1.Square(a);
+            Console.WriteLine("Enter a number for Cube");
+            int b = Convert.ToInt32(Console.ReadLine());
+            c1.Cube(b);
+
+            Console.WriteLine("Enter a number for Round OFF");
+            float c  = float.Parse(Console.ReadLine());
+            c1.Roundooff(c);
+q3
+Create class student with private member variable 
+Prn_no, 
+(subjects)
+Java, c#, Html
+Total
+Percentage
+
+Write method public void get_total()
+Write method public void get_percentage()
+Write method public string display() which will display Prn_no total percentage
+Create 2 object of a class and display record.
+
+Ans
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    internal class Student
+    {
+        int prn;
+        float java;
+        float c;
+        float Html;
+        int total;
+        float percentage;
+
+       public Student(int prn, float java, float c, float html, int total, float percentage)
+        {
+            this.prn = prn;
+            this.java = java;
+            this.c = c;
+            Html = html;
+            this.total = total;
+            this.percentage = percentage;
+        }
+
+        public void gettotal() 
+        {
+
+            Console.WriteLine(total);
+        }
+        public void getpercentage() {
+            Console.WriteLine(percentage);
+        }
+        public void getprn() {
+            Console.WriteLine(prn);
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Student S1 = new Student(20198008,22,33,44,55,44 );
+            S1.gettotal();
+            S1.getpercentage();
+            S1.getprn();
+
+
+        }
+    }
+}
