@@ -1,0 +1,178 @@
+Q1
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AssignmentDay3q1
+{
+    internal class Employee
+    {
+     private   int id;
+     private   String name;
+     private   int Salary;
+    private    double netsal;
+
+
+     public   Employee(int id, string name, int salary)
+        {
+            this.id = id;
+            this.name = name;
+            this.Salary = salary;
+            this.netsal = Cal(Salary);
+        }
+
+        public double Cal(double Salary) {
+
+            double netsal = Salary - (Salary * 0.1);
+            return netsal;    
+        }
+        public void disp() 
+        {
+            Console.WriteLine("The name is"+name);
+            Console.WriteLine("The NetSalary" + netsal);
+        
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AssignmentDay3q1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee S1 = new Employee(111,"Avdut",90000);
+            S1.disp();
+
+            Employee S2 = new Employee(222, "Aditya",108000);
+            S2.disp();
+            Employee S3 = new Employee(333, "harshal", 60000);
+            S3.disp();
+        }
+    }
+}
+Q2--
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Schema;
+
+namespace AssignmentDay3
+{
+    internal class Student
+    {
+        String name;
+        int Maths;
+        int Science;
+        int English;
+
+        public Student(string name, int maths, int science, int english)
+        {
+            this.name = name;
+            Maths = maths;
+            Science = science;
+            English = english;
+        }
+
+        public void total() 
+        {
+            int total = Maths + Science + English;
+            Console.WriteLine("The Name is  " + name);
+            Console.WriteLine("The Total number is  "+total);
+        }
+       
+
+
+    }
+
+
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AssignmentDay3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Student S1 = new Student("Aditya",78,98,87);
+            S1.total();
+            
+        }
+    }
+}
+Q3-->>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignmentday3que3
+{
+    enum Dept
+    {
+        MKT, ADMIN, ADV
+    }
+    internal class Employee
+    {
+        int id;
+        String name;
+        int salary;
+        double netsalary;
+        Dept dept;
+        public Employee(int id,String name,int Salary,Dept dept ) { 
+            this.id = id;
+            this.name = name;
+            this.salary = Salary;
+            this.dept = dept;
+        }
+        public double Paytax(double p)
+        {
+            this.netsalary = (salary - salary *  (p/100));
+
+            return netsalary;
+        
+        
+        }
+        public void disp() {
+
+            Console.BackgroundColor =ConsoleColor.DarkYellow; Console.ForegroundColor = ConsoleColor.Red;
+
+            Console.WriteLine("Name  "+name+"netsalary  "+netsalary+ "Department  "+dept);
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignmentday3que3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee E1 = new Employee(1, "Raj", 50000, Dept.MKT);
+            E1.Paytax(50);
+            E1.disp();
+
+        }
+    }
+}
